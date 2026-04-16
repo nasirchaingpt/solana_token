@@ -1,0 +1,29 @@
+# Dependencies
+node_modules
+
+# Vite build output
+dist
+
+# Local env & secrets (commit `.env.example` only)
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Logs & debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / OS
+.DS_Store
+.idea
+*.sw?
+.vscode/*
+!.vscode/extensions.json
+
+# Tooling caches
+.vite
+*.tsbuildinfo
+coverage

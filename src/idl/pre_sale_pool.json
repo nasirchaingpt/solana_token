@@ -1,0 +1,1472 @@
+{
+  "version": "0.1.0",
+  "name": "pre_sale_pool",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "poolsCount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "registerPool",
+      "accounts": [
+        {
+          "name": "poolsCount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sellTokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "sellTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "tokenMint",
+          "type": "publicKey"
+        },
+        {
+          "name": "tokenAccount",
+          "type": "publicKey"
+        },
+        {
+          "name": "duration",
+          "type": "u64"
+        },
+        {
+          "name": "openTime",
+          "type": "u64"
+        },
+        {
+          "name": "signer",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "setOfferedLamportsData",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "rate",
+          "type": "u64"
+        },
+        {
+          "name": "decimals",
+          "type": "u8"
+        },
+        {
+          "name": "fundingAccount",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "setOfferedLamportsRate",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "rate",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "setOfferedLamportsDecimals",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "decimals",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "setOfferedTokenData",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredTokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "offeredTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "fundingTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "tokenMint",
+          "type": "publicKey"
+        },
+        {
+          "name": "rate",
+          "type": "u64"
+        },
+        {
+          "name": "decimals",
+          "type": "u8"
+        },
+        {
+          "name": "account",
+          "type": "publicKey"
+        },
+        {
+          "name": "fundingAccount",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "setOfferedTokenRate",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "tokenMint",
+          "type": "publicKey"
+        },
+        {
+          "name": "rate",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "setOfferedTokenDecimals",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "tokenMint",
+          "type": "publicKey"
+        },
+        {
+          "name": "decimals",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "transferPoolOwnership",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "newOwner",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "setNewSigner",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "newSigner",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "setCloseTime",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "closeTime",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "setOpenTime",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "openTime",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "setSaleClaimFeeMode",
+      "docs": [
+        "`0` = claim sends gross from vault so user receives net entitlement (Token-2022 transfer fee covered).",
+        "`1` = sale mint must have zero transfer fee for this epoch at claim time (owner disables fee; use with frontend gating)."
+      ],
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "mode",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "changeSaleToken",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sellTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "sellTokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "tokenMint",
+          "type": "publicKey"
+        },
+        {
+          "name": "tokenAccount",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "buyTokenBySolWithPermission",
+      "accounts": [
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userPurchased",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userByCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "fundingWallet",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "ixSysvar",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "candidate",
+          "type": "publicKey"
+        },
+        {
+          "name": "maxAmount",
+          "type": "u64"
+        },
+        {
+          "name": "minAmount",
+          "type": "u64"
+        },
+        {
+          "name": "signature",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        },
+        {
+          "name": "lamportAmount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "buyTokenByTokenWithPermission",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userPurchased",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userByCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sellTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "ixSysvar",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenFromAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenToAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "buyTokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "candidate",
+          "type": "publicKey"
+        },
+        {
+          "name": "maxAmount",
+          "type": "u64"
+        },
+        {
+          "name": "minAmount",
+          "type": "u64"
+        },
+        {
+          "name": "signature",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        },
+        {
+          "name": "token",
+          "type": "publicKey"
+        },
+        {
+          "name": "tokenAmount",
+          "type": "u64"
+        },
+        {
+          "name": "tokenFromAccount",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "refundRemainingTokens",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "poolMetadata",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "sellTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sellTokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "wallet",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "wallet",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "refundRemainingTokenCurrency",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "poolMetadata",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrencyAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrencyMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "wallet",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "currency",
+          "type": "publicKey"
+        },
+        {
+          "name": "wallet",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "refundRemainingNativeCurrency",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "wallet",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "wallet",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "claimTokens",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userClaimed",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userPurchased",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sellTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sellTokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "candidateTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "ixSysvar",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "candidate",
+          "type": "publicKey"
+        },
+        {
+          "name": "tokenAccount",
+          "type": "publicKey"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "signature",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "refundTokens",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "Must be the buyer whose position is refunded (CPS-04: matches Ed25519 payload `_candidate`)."
+          ]
+        },
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userClaimed",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userByCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userPurchased",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "refundCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "ixSysvar",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "candidate",
+          "type": "publicKey"
+        },
+        {
+          "name": "currency",
+          "type": "publicKey"
+        },
+        {
+          "name": "deadline",
+          "type": "u64"
+        },
+        {
+          "name": "signature",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "claimRefundTokens",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userByCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "refundCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrencyAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrencyMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "candidateTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "ixSysvar",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "candidate",
+          "type": "publicKey"
+        },
+        {
+          "name": "tokenAccount",
+          "type": "publicKey"
+        },
+        {
+          "name": "currency",
+          "type": "publicKey"
+        },
+        {
+          "name": "signature",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "claimRefundNative",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "poolMetadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userByCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "refundCurrency",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "offeredCurrency",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "ixSysvar",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "poolIndex",
+          "type": "u16"
+        },
+        {
+          "name": "candidate",
+          "type": "publicKey"
+        },
+        {
+          "name": "signature",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "PoolsCount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "count",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PoolMetadata",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "index",
+            "type": "u16"
+          },
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "tokenMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "tokenAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "signer",
+            "type": "publicKey"
+          },
+          {
+            "name": "openTime",
+            "type": "u64"
+          },
+          {
+            "name": "closeTime",
+            "type": "u64"
+          },
+          {
+            "name": "tokenSold",
+            "type": "u64"
+          },
+          {
+            "name": "totalUnclaimed",
+            "type": "u64"
+          },
+          {
+            "name": "totalRefunded",
+            "type": "u64"
+          },
+          {
+            "name": "saleClaimFeeMode",
+            "docs": [
+              "`0` = sale mint may use Token-2022 transfer fee: claim debits **gross** from vault so user receives **net** `claim_amount`.",
+              "`1` = strict: sale mint must have **zero** transfer fee when claiming (owner disables fee on mint; frontend may block until then)."
+            ],
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OfferedCurrency",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "rate",
+            "type": "u64"
+          },
+          {
+            "name": "decimals",
+            "type": "u8"
+          },
+          {
+            "name": "account",
+            "type": "publicKey"
+          },
+          {
+            "name": "fundingAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "currencyRaisedAmount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserPurchased",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserByCurrency",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "userPurchasedByCurrency",
+            "type": "u64"
+          },
+          {
+            "name": "investedAmountOf",
+            "type": "u64"
+          },
+          {
+            "name": "userRefundTokenCurrencyAmount",
+            "type": "u64"
+          },
+          {
+            "name": "userRefundTokenCurrency",
+            "type": "publicKey"
+          },
+          {
+            "name": "userRefundTokenIsClaimed",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserClaimed",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RefundCurrency",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "normal",
+            "type": "u64"
+          },
+          {
+            "name": "total",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "ZeroDuration",
+      "msg": "IDOPoolError::ZERO_DURATION"
+    },
+    {
+      "code": 6001,
+      "name": "ZeroOfferedRate",
+      "msg": "IDOPoolError::ZERO_OFFERED_RATE"
+    },
+    {
+      "code": 6002,
+      "name": "ArithmeticError",
+      "msg": "IDOPoolError::ARITHMETIC_ERROR"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidRate",
+      "msg": "IDOPoolError::RATE_INVALID"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidSigner",
+      "msg": "IDOPoolError::SIGNER_INVALID"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidTime",
+      "msg": "IDOPoolError::INVALID_TIME"
+    },
+    {
+      "code": 6006,
+      "name": "OnlyOwner",
+      "msg": "IDOPoolError::ONLY_OWNER_METHOD"
+    },
+    {
+      "code": 6007,
+      "name": "InvalidAccount",
+      "msg": "IDOPoolError::INVALID_ACCOUNT_PASSED"
+    },
+    {
+      "code": 6008,
+      "name": "UserRefunded",
+      "msg": "IDOPoolError::USER_REFUNDED"
+    },
+    {
+      "code": 6009,
+      "name": "PurchaseMethodNotAllowed",
+      "msg": "IDOPoolError::PURCHASE_METHOD_NOT_ALLOWED"
+    },
+    {
+      "code": 6010,
+      "name": "PoolEnded",
+      "msg": "IDOPoolError::POOL_ENDED"
+    },
+    {
+      "code": 6011,
+      "name": "PoolNotEnded",
+      "msg": "IDOPoolError::POOL_NOT_ENDED"
+    },
+    {
+      "code": 6012,
+      "name": "InvalidLamportAmount",
+      "msg": "IDOPoolError::INVALID_LAMPORT_AMOUNT"
+    },
+    {
+      "code": 6013,
+      "name": "NotEnoughTokens",
+      "msg": "IDOPoolError::NOT_ENOUGH_TOKENS_FOR_SALE"
+    },
+    {
+      "code": 6014,
+      "name": "MinAmountUnreached",
+      "msg": "IDOPoolError::MIN_AMOUNT_UNREACHED"
+    },
+    {
+      "code": 6015,
+      "name": "ExceededAllowance",
+      "msg": "IDOPoolError::PURCHASE_AMOUNT_EXCEED_ALLOWANCE"
+    },
+    {
+      "code": 6016,
+      "name": "SigVerificationFailed",
+      "msg": "IDOPoolError::SIGNATURE_VERIFICATION_FAILED"
+    },
+    {
+      "code": 6017,
+      "name": "EmptyBalance",
+      "msg": "IDOPoolError::EMPTY_BALANCE"
+    },
+    {
+      "code": 6018,
+      "name": "AmountLessThanClaimed",
+      "msg": "IDOPoolError::AMOUNT_MUST_BE_GREATER_THAN_CLAIMED"
+    },
+    {
+      "code": 6019,
+      "name": "RefundEnded",
+      "msg": "IDOPoolError::REFUND_ENDED"
+    },
+    {
+      "code": 6020,
+      "name": "NotAllowedToRefund",
+      "msg": "IDOPoolError::NOT_ALLOWED_TO_REFUND"
+    },
+    {
+      "code": 6021,
+      "name": "CurrencyRefundNotAllowed",
+      "msg": "IDOPoolError::NOT_ALLOW_CURRENCY_TO_REFUND"
+    },
+    {
+      "code": 6022,
+      "name": "RefundClaimNotAllowed",
+      "msg": "IDOPoolError::NOT_ALLOWED_TO_CLAIM_REFUND"
+    },
+    {
+      "code": 6023,
+      "name": "RefundClaimInsufficientToken",
+      "msg": "IDOPoolError::NOT_ENOUGH_CURRENCY_FOR_CLAIM_REFUND"
+    },
+    {
+      "code": 6024,
+      "name": "ZeroAddress",
+      "msg": "IDOPoolError::ZERO_ADDRESS"
+    },
+    {
+      "code": 6025,
+      "name": "InvalidDecimals",
+      "msg": "IDOPoolError::INVALID_DECIMALS"
+    },
+    {
+      "code": 6026,
+      "name": "InvalidAccounts",
+      "msg": "IDOPoolError::INVALID_ACCOUNT"
+    },
+    {
+      "code": 6027,
+      "name": "InvalidOwner",
+      "msg": "IDOPoolError::INVALID_OWNER"
+    },
+    {
+      "code": 6028,
+      "name": "UnsupportedTokenMintExtension",
+      "msg": "IDOPoolError::UNSUPPORTED_TOKEN_MINT_EXTENSION"
+    },
+    {
+      "code": 6029,
+      "name": "TransferFeeAccountingFailed",
+      "msg": "IDOPoolError::TRANSFER_FEE_ACCOUNTING_FAILED"
+    },
+    {
+      "code": 6030,
+      "name": "SaleClaimRequiresZeroTransferFee",
+      "msg": "IDOPoolError::SALE_CLAIM_REQUIRES_ZERO_TRANSFER_FEE"
+    },
+    {
+      "code": 6031,
+      "name": "InvalidSaleClaimFeeMode",
+      "msg": "IDOPoolError::INVALID_SALE_CLAIM_FEE_MODE"
+    }
+  ],
+  "metadata": {
+    "address": "DWPyEfUEaxS9oPwKgPQziFYQDQJoorbrHhvBAXaEbyrb"
+  }
+}
