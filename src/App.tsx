@@ -1006,7 +1006,7 @@ export default function App() {
         />
 
         <div className="section-title">Setup</div>
-
+{/* 
         <div className="card">
           <h2>initialize</h2>
           {poolsCountInitialized === null ? (
@@ -1031,7 +1031,7 @@ export default function App() {
             Run initialize
           </button>
           <CardFeedback cardId="init" feedback={feedback} />
-        </div>
+        </div> */}
 
         {/* <div className="card">
           <h2>register_pool</h2>
